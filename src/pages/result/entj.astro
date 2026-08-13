@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "ENTJ";
+const nickname = "The Commander";
+const tagline = "Bold, decisive, and built to lead — even when no one asked them to.";
+
+const strengths = [
+  "Natural strategic leadership",
+  "Decisive under pressure",
+  "High energy and drive",
+  "Excellent at organising people and resources",
+  "Long-range vision combined with execution focus",
+];
+
+const growthEdges = [
+  "Can be domineering or dismissive of input",
+  "Impatient with perceived incompetence",
+  "May steamroll consensus in pursuit of efficiency",
+  "Difficulty acknowledging emotional needs — their own or others'",
+  "Sets standards that can be unrealistic for others",
+];
+
+const careers = [
+  "Executive / CEO", "Management Consultant", "Entrepreneur",
+  "Lawyer / Barrister", "Political Strategist", "Investment Banker",
+];
+
+const stats = [
+  { label: "Population", value: "~2%" },
+  { label: "Energy", value: "Extraverted" },
+  { label: "Information", value: "Intuitive" },
+  { label: "Decisions", value: "Thinking" },
+  { label: "Lifestyle", value: "Judging" },
+];
+---
+
+<BaseLayout
+  title="ENTJ — The Commander Personality Type | TypeInsight"
+  description="Full profile of the ENTJ personality: strengths, blind spots, career paths, and growth areas for The Commander."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The ENTJ — Extraverted, Intuitive, Thinking, Judging — is The Commander: decisive, strategic, and energised by challenge. ENTJs don't wait for leadership vacuums to fill themselves; they step forward with a plan already formed.</p>
+          <p>This type combines big-picture vision with a rare willingness to act. Where INTJs design systems in solitude, ENTJs build them publicly — assembling teams, allocating resources, and driving execution with infectious urgency. They are most alive when tackling problems of scale.</p>
+          <p>The cost of this force is a tendency to run roughshod over process and people. ENTJs can mistake speed for effectiveness and efficiency for wisdom. Their directness is an asset in crisis; in everyday collaboration, it can read as arrogance.</p>
+          <p>Growth for ENTJs often means learning to slow down enough to genuinely hear dissent — not as obstruction but as signal. The best ENTJ leaders are those who have learned to channel their drive without diminishing those around them.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

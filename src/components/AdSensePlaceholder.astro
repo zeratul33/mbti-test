@@ -1,0 +1,20 @@
+---
+export interface Props {
+  format?: 'horizontal' | 'rectangle' | 'square';
+  slot?: string;
+}
+const { format = 'horizontal' } = Astro.props;
+const heightClass = format === 'horizontal' ? 'h-[90px]' : 'h-[250px]';
+---
+<div class={`w-full ${heightClass} rounded-[20px] flex items-center justify-center text-ink-mute text-xs font-sans my-6`} style="border:1px solid var(--ink-line)">
+  <!-- AdSense -->
+  <ins
+    class="adsbygoogle block w-full h-full"
+    style="display:block"
+    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+    data-ad-slot="0000000000"
+    data-ad-format={format === 'horizontal' ? 'horizontal' : 'rectangle'}
+    data-full-width-responsive="true"
+  ></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>

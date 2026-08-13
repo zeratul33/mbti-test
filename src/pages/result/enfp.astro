@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "ENFP";
+const nickname = "The Campaigner";
+const tagline = "Energetic, imaginative, and genuinely convinced that everything is connected.";
+
+const strengths = [
+  "Contagious enthusiasm and energy",
+  "Rich imagination and creative vision",
+  "Ability to read and connect with people quickly",
+  "Strong emotional intelligence",
+  "Sees potential in people and situations others overlook",
+];
+
+const growthEdges = [
+  "Difficulty sustaining focus on a single path long-term",
+  "Can over-commit and burn out",
+  "Avoids conflict to a fault",
+  "Sensitive to criticism; can be approval-seeking",
+  "May spiral in overthinking and second-guessing",
+];
+
+const careers = [
+  "Journalist / Reporter", "Creative Strategist", "Counsellor / Coach",
+  "Marketing Director", "Actor / Performer", "Community Organiser",
+];
+
+const stats = [
+  { label: "Population", value: "~7%" },
+  { label: "Energy", value: "Extraverted" },
+  { label: "Information", value: "Intuitive" },
+  { label: "Decisions", value: "Feeling" },
+  { label: "Lifestyle", value: "Perceiving" },
+];
+---
+
+<BaseLayout
+  title="ENFP — The Campaigner Personality Type | TypeInsight"
+  description="Full profile of the ENFP personality: strengths, blind spots, career paths, and growth areas for The Campaigner."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The ENFP — Extraverted, Intuitive, Feeling, Perceiving — is The Campaigner: a type that experiences the world as a web of possibilities and connections. ENFPs don't just meet people; they encounter them — seeking the story beneath the surface, the potential beneath the present.</p>
+          <p>This type is among the most socially magnetic in the entire framework. Their enthusiasm is genuine rather than performed, which is precisely why it's so persuasive. ENFPs make outstanding advocates, storytellers, and mobilisers of people around a cause.</p>
+          <p>The ENFP's challenge is depth of commitment. They are drawn to beginnings — the excitement of a new project, a new relationship, a new identity — and may struggle to sustain interest through the long middle. This isn't fickleness; it's a cognitive preference for novelty and possibilities that requires deliberate management.</p>
+          <p>At their best, ENFPs synthesise their emotional intelligence, creativity, and social fluency into work that genuinely moves people. At their most stretched, they scatter energy across too many fronts and underdeliver on each. The discipline of finishing is where ENFPs most benefit from external structure or accountability.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "INFJ";
+const nickname = "The Advocate";
+const tagline = "The rarest type — idealistic, deeply principled, and quietly determined to make things better.";
+
+const strengths = [
+  "Deep empathy and insight into others",
+  "Visionary with a sense of purpose",
+  "Strong moral compass",
+  "Creative and original thinker",
+  "Highly capable of sustained focus on meaningful goals",
+];
+
+const growthEdges = [
+  "Prone to burnout from absorbing others' emotions",
+  "Sets impossibly high standards for self and others",
+  "Can be overly private or secretive",
+  "Tendency to 'door slam' — abruptly cutting off people",
+  "Struggles with the gap between ideals and reality",
+];
+
+const careers = [
+  "Psychologist / Therapist", "Writer / Author", "Non-profit Director",
+  "Social Worker", "UX Researcher", "Chaplain / Counsellor",
+];
+
+const stats = [
+  { label: "Population", value: "~1–2%" },
+  { label: "Energy", value: "Introverted" },
+  { label: "Information", value: "Intuitive" },
+  { label: "Decisions", value: "Feeling" },
+  { label: "Lifestyle", value: "Judging" },
+];
+---
+
+<BaseLayout
+  title="INFJ — The Advocate Personality Type | TypeInsight"
+  description="Full profile of the INFJ personality: strengths, blind spots, career paths, and growth areas for The Advocate."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The INFJ — Introverted, Intuitive, Feeling, Judging — is The Advocate and the rarest of all 16 types. INFJs are simultaneously idealistic and practical: they hold an unshakeable vision of how things ought to be, then systematically work toward it.</p>
+          <p>This type carries an unusual depth. INFJs seem to intuitively understand people — their motivations, hidden struggles, and potential — in ways that can feel almost uncanny. This gift makes them extraordinary listeners, counsellors, and writers, but it also means they absorb emotional weight that others simply don't register.</p>
+          <p>The INFJ's core tension is between their need for solitude (to process and recharge) and their desire to contribute meaningfully to people and causes. They often appear social and warm in brief encounters, then need significant quiet time to recover.</p>
+          <p>Their greatest risk is chronic idealism that slides into disillusionment. When the world consistently falls short of their vision, INFJs can retreat into isolation or cynicism. The practice of accepting imperfect progress — celebrating small gains rather than mourning the gap — is where their resilience gets built.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

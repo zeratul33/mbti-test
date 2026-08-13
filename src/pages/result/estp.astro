@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "ESTP";
+const nickname = "The Entrepreneur";
+const tagline = "Bold, perceptive, and action-first — the person who figures it out by doing it.";
+
+const strengths = [
+  "Quick-thinking and decisive in fast-moving situations",
+  "Highly perceptive of people and their motivations",
+  "Energetic and persuasive",
+  "Pragmatic — focuses on what works, not what should work",
+  "Thrives under pressure",
+];
+
+const growthEdges = [
+  "Impatient with theory and long-term planning",
+  "May act before thinking through consequences",
+  "Can be blunt in ways that damage relationships",
+  "Risk-taking that crosses into recklessness",
+  "Difficulty committing to long-term projects",
+];
+
+const careers = [
+  "Sales Director", "Emergency Responder / Firefighter", "Entrepreneur",
+  "Stock Trader", "Sports Coach", "Detective",
+];
+
+const stats = [
+  { label: "Population", value: "~4–6%" },
+  { label: "Energy", value: "Extraverted" },
+  { label: "Information", value: "Sensing" },
+  { label: "Decisions", value: "Thinking" },
+  { label: "Lifestyle", value: "Perceiving" },
+];
+---
+
+<BaseLayout
+  title="ESTP — The Entrepreneur Personality Type | TypeInsight"
+  description="Full profile of the ESTP personality: strengths, blind spots, career paths, and growth areas for The Entrepreneur."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The ESTP — Extraverted, Sensing, Thinking, Perceiving — is The Entrepreneur: a type defined by presence, action, and an almost preternatural ability to read a room and a situation simultaneously. ESTPs don't plan their way into things; they engage directly and course-correct as they go.</p>
+          <p>ESTPs are among the most perceptive of all types when it comes to people. They notice the micro-expressions, the inconsistencies, the social dynamics that others miss — and they use that information with remarkable effectiveness. In negotiation, sales, or any situation requiring rapid interpersonal intelligence, few types compete.</p>
+          <p>The cost of this live-wire orientation is difficulty with anything that requires patience, sustained abstraction, or deferred gratification. ESTPs are future-oriented only in the immediate sense — the next hour, the next deal — and can struggle with the long arc of career-building or relationship depth.</p>
+          <p>Growth for ESTPs often means slowing down enough to consider consequences before acting, and building relationships deep enough that they survive the ESTP's periods of inattention.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "ESFP";
+const nickname = "The Entertainer";
+const tagline = "Spontaneous, energetic, and magnetic — the person who makes ordinary moments feel like events.";
+
+const strengths = [
+  "Infectious enthusiasm and warmth",
+  "Exceptional ability to connect with people instantly",
+  "Highly observant of others' emotions",
+  "Practical and resourceful in the present moment",
+  "Brings fun and energy to any environment",
+];
+
+const growthEdges = [
+  "Avoids difficult conversations and long-term planning",
+  "Can be easily distracted or unfocused",
+  "Sensitive to criticism and conflict",
+  "May over-prioritise fun at the expense of responsibility",
+  "Struggles with abstract or theoretical tasks",
+];
+
+const careers = [
+  "Actor / Entertainer", "Event Planner", "Sales Representative",
+  "Flight Attendant", "Childcare Worker", "Personal Trainer",
+];
+
+const stats = [
+  { label: "Population", value: "~7–10%" },
+  { label: "Energy", value: "Extraverted" },
+  { label: "Information", value: "Sensing" },
+  { label: "Decisions", value: "Feeling" },
+  { label: "Lifestyle", value: "Perceiving" },
+];
+---
+
+<BaseLayout
+  title="ESFP — The Entertainer Personality Type | TypeInsight"
+  description="Full profile of the ESFP personality: strengths, blind spots, career paths, and growth areas for The Entertainer."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The ESFP — Extraverted, Sensing, Feeling, Perceiving — is The Entertainer: a type that lives fully in the present and brings others along for the ride. ESFPs are among the most socially vibrant personalities, combining genuine warmth with an instinctive ability to read and respond to the energy around them.</p>
+          <p>ESFPs don't perform joy — they generate it. Their enthusiasm is authentic, their attention to others is real, and their ability to make people feel noticed and valued is a natural gift. In environments that reward human connection, creativity, and adaptability, ESFPs thrive.</p>
+          <p>The challenge for ESFPs is the long game. Their present-focus is a genuine strength in most social and reactive situations, but it can become a liability when sustained effort, deferred gratification, or abstract planning are required. The bills that haven't been filed, the difficult conversation that keeps getting postponed — these are the pressure points.</p>
+          <p>Growth for ESFPs involves building the scaffolding that allows their spontaneity to operate sustainably: a few systems, a few routines, a willingness to sit with discomfort long enough to address it before it becomes a crisis.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

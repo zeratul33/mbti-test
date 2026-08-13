@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "ISFP";
+const nickname = "The Adventurer";
+const tagline = "Sensitive, creative, and fiercely authentic — living fully in the present moment.";
+
+const strengths = [
+  "Genuine warmth and openness",
+  "Strong aesthetic sensibility",
+  "Flexible and easy to be around",
+  "Deeply attuned to their own values",
+  "Curious and open to new experiences",
+];
+
+const growthEdges = [
+  "Conflict avoidance that allows problems to fester",
+  "Difficulty with long-term planning",
+  "Unpredictable — can withdraw without explanation",
+  "Overly self-critical",
+  "Struggles to assert boundaries clearly",
+];
+
+const careers = [
+  "Visual Artist / Illustrator", "Musician", "Physical Therapist",
+  "Fashion Designer", "Chef", "Veterinary Nurse",
+];
+
+const stats = [
+  { label: "Population", value: "~5–9%" },
+  { label: "Energy", value: "Introverted" },
+  { label: "Information", value: "Sensing" },
+  { label: "Decisions", value: "Feeling" },
+  { label: "Lifestyle", value: "Perceiving" },
+];
+---
+
+<BaseLayout
+  title="ISFP — The Adventurer Personality Type | TypeInsight"
+  description="Full profile of the ISFP personality: strengths, blind spots, career paths, and growth areas for The Adventurer."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The ISFP — Introverted, Sensing, Feeling, Perceiving — is The Adventurer: a type that lives close to the texture of immediate experience. ISFPs don't operate through abstract plans; they respond to what is present, beautiful, or meaningful right now.</p>
+          <p>ISFPs are among the most aesthetically gifted of all types. Whether or not they work in formally creative fields, they notice beauty and create it naturally — in how they dress, how they arrange a space, how they move through the world. This sensory attunement is a genuine intelligence, not a preference.</p>
+          <p>Emotionally, ISFPs are warm but private. They feel deeply and are capable of great loyalty and compassion, but they rarely articulate this directly. People who know them well recognise the care in small actions; those who don't may miss it entirely.</p>
+          <p>The ISFP's central challenge is navigating the structures of adult life — careers, commitments, plans — in a way that doesn't feel like a cage. The path forward usually involves finding environments that honour their autonomy and values rather than trying to make themselves conform to environments that don't.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

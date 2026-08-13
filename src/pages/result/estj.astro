@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "ESTJ";
+const nickname = "The Executive";
+const tagline = "Organised, decisive, and confident — the person who makes the plan and holds others to it.";
+
+const strengths = [
+  "Strong natural leadership and authority",
+  "Excellent at organising people and processes",
+  "Consistent, reliable, and hard-working",
+  "Clear communicator with high expectations",
+  "Committed to fairness through consistent rules",
+];
+
+const growthEdges = [
+  "Can be inflexible and dismissive of novel approaches",
+  "May prioritise order over individual needs",
+  "Tendency to be judgmental of those who don't share their values",
+  "Struggles to show vulnerability",
+  "Can steamroll consensus in favour of efficiency",
+];
+
+const careers = [
+  "Operations Manager", "Military Commander", "Senior Manager / Director",
+  "Financial Officer (CFO)", "Judge", "School Principal",
+];
+
+const stats = [
+  { label: "Population", value: "~8–12%" },
+  { label: "Energy", value: "Extraverted" },
+  { label: "Information", value: "Sensing" },
+  { label: "Decisions", value: "Thinking" },
+  { label: "Lifestyle", value: "Judging" },
+];
+---
+
+<BaseLayout
+  title="ESTJ — The Executive Personality Type | TypeInsight"
+  description="Full profile of the ESTJ personality: strengths, blind spots, career paths, and growth areas for The Executive."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The ESTJ — Extraverted, Sensing, Thinking, Judging — is The Executive: direct, structured, and committed to getting things done the right way. ESTJs are pillars of institutions and the enforcers of standards that hold organisations together.</p>
+          <p>ESTJs lead from experience and precedent. They trust what has been proven over time, and they build their authority through demonstrated competence and consistent delivery. In a world of shifting priorities, their insistence on follow-through is a genuine asset.</p>
+          <p>The ESTJ's characteristic blind spot is emotional attunement. They operate in the domain of tasks and results, and can underestimate how much the human dimension of a situation matters for outcomes. People who feel unseen or steamrolled rarely give their best work — and ESTJs may not notice the connection.</p>
+          <p>At their most developed, ESTJs pair their operational excellence with genuine respect for the people executing the plan. They build cultures of accountability that are also cultures of dignity — and that combination is rare and powerful.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

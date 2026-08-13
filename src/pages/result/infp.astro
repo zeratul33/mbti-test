@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "INFP";
+const nickname = "The Mediator";
+const tagline = "Idealistic, empathetic, and quietly creative — searching for meaning in everything.";
+
+const strengths = [
+  "Deep empathy and emotional intelligence",
+  "Rich inner life and creative imagination",
+  "Genuine and authentic in relationships",
+  "Strong personal values as a compass",
+  "Passionate and committed to causes they believe in",
+];
+
+const growthEdges = [
+  "Can be overly idealistic and easily disappointed",
+  "Takes criticism personally and deeply",
+  "Prone to self-isolation when overwhelmed",
+  "May struggle with practical day-to-day structure",
+  "Difficulty asserting needs directly",
+];
+
+const careers = [
+  "Writer / Poet", "Therapist / Counsellor", "Art Director",
+  "Social Worker", "Teacher (humanities)", "Musician",
+];
+
+const stats = [
+  { label: "Population", value: "~4%" },
+  { label: "Energy", value: "Introverted" },
+  { label: "Information", value: "Intuitive" },
+  { label: "Decisions", value: "Feeling" },
+  { label: "Lifestyle", value: "Perceiving" },
+];
+---
+
+<BaseLayout
+  title="INFP — The Mediator Personality Type | TypeInsight"
+  description="Full profile of the INFP personality: strengths, blind spots, career paths, and growth areas for The Mediator."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The INFP — Introverted, Intuitive, Feeling, Perceiving — is The Mediator: a type shaped by a vivid inner world and a profound need for authenticity. INFPs don't just hold values; they live them, often at personal cost.</p>
+          <p>Creative by nature, INFPs are among the most artistically oriented of all types. Whether or not they pursue formal creative work, they experience the world through metaphor, emotion, and narrative. They are drawn to stories — others' and their own — and make exceptionally perceptive observers of the human condition.</p>
+          <p>INFPs form deep, loyal bonds, but are selective about who earns entry into their inner circle. Once trust is given, it's given fully; betrayal lands correspondingly hard. They need partners and colleagues who respect their need for depth and don't mistake their quiet nature for passivity.</p>
+          <p>The challenge for INFPs is translating the richness of their inner life into the external world. Structure, deadlines, and repetitive task work can feel like a slow erosion of self. Finding vocations or environments that honour their need for meaningful, values-aligned work is not optional for them — it is a prerequisite for sustained wellbeing.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

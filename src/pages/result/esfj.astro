@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "ESFJ";
+const nickname = "The Consul";
+const tagline = "Warm, social, and devoted — the host who remembers everyone's preferences and makes sure nobody feels left out.";
+
+const strengths = [
+  "Genuinely warm and attentive to others",
+  "Highly skilled at organising social situations",
+  "Loyal and supportive in relationships",
+  "Practical care expressed through consistent action",
+  "Strong community builder",
+];
+
+const growthEdges = [
+  "Seeks approval and is vulnerable to social criticism",
+  "Can be controlling in the name of caring",
+  "Difficulty accepting unconventional lifestyles",
+  "May suppress own opinions to maintain harmony",
+  "Can take disagreement personally",
+];
+
+const careers = [
+  "Event Coordinator", "HR Manager", "Primary Care Nurse",
+  "School Counsellor", "Real Estate Agent", "Office Administrator",
+];
+
+const stats = [
+  { label: "Population", value: "~9–12%" },
+  { label: "Energy", value: "Extraverted" },
+  { label: "Information", value: "Sensing" },
+  { label: "Decisions", value: "Feeling" },
+  { label: "Lifestyle", value: "Judging" },
+];
+---
+
+<BaseLayout
+  title="ESFJ — The Consul Personality Type | TypeInsight"
+  description="Full profile of the ESFJ personality: strengths, blind spots, career paths, and growth areas for The Consul."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The ESFJ — Extraverted, Sensing, Feeling, Judging — is The Consul: warm, social, and fundamentally oriented toward the wellbeing of the people around them. ESFJs draw energy from connection and find deep satisfaction in creating environments where others feel welcome and cared for.</p>
+          <p>ESFJs are acutely aware of social dynamics and group harmony. They notice when someone is uncomfortable before anyone else does, and move instinctively to help. This makes them extraordinary hosts, coordinators, and community builders — people who hold groups together through consistent care and attention.</p>
+          <p>The ESFJ's vulnerability lies in their need for approval. Because they invest so much in others' wellbeing, they can struggle when that care is not reciprocated or acknowledged. Criticism — especially social criticism — lands harder for ESFJs than for most, and they may go to significant lengths to avoid conflict or disapproval.</p>
+          <p>Mature ESFJs learn to hold their values independently of others' opinions, and to recognise that genuine care sometimes means saying difficult things rather than preserving a comfortable surface.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

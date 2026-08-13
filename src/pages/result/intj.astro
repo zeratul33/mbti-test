@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "INTJ";
+const nickname = "The Architect";
+const tagline = "Rare, strategic, and uncompromising in the pursuit of excellence.";
+
+const strengths = [
+  "Strategic long-term thinking",
+  "Independent and self-directed",
+  "High standards and follow-through",
+  "Confident in complex decision-making",
+  "Visionary pattern recognition",
+];
+
+const growthEdges = [
+  "Can appear cold or dismissive of others' emotions",
+  "Perfectionism that blocks progress",
+  "Difficulty delegating or trusting others' methods",
+  "Tends to undervalue collaboration",
+  "Impatience with inefficiency or 'irrational' behaviour",
+];
+
+const careers = [
+  "Software Architect", "Scientist / Researcher", "Strategic Consultant",
+  "Investment Analyst", "Attorney / Judge", "Systems Engineer",
+];
+
+const stats = [
+  { label: "Population", value: "~2%" },
+  { label: "Energy", value: "Introverted" },
+  { label: "Information", value: "Intuitive" },
+  { label: "Decisions", value: "Thinking" },
+  { label: "Lifestyle", value: "Judging" },
+];
+---
+
+<BaseLayout
+  title="INTJ — The Architect Personality Type | TypeInsight"
+  description="Deep profile of the INTJ personality: strengths, blind spots, career paths, and relationship dynamics for The Architect."
+>
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2"
+        style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a
+        href="/test"
+        class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper"
+        style="border:1px solid rgba(31,26,20,0.28)"
+      >
+        Retake the Test
+      </a>
+    </div>
+  </section>
+
+  <!-- 3-col layout -->
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <!-- Main content: 2 cols -->
+    <div class="lg:col-span-2 space-y-12">
+
+      <!-- Description -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>
+            The INTJ — Introverted, Intuitive, Thinking, Judging — is one of the rarest and most
+            analytically driven personalities. Known as The Architect, this type combines a powerful
+            strategic mind with an inner life of almost relentless reflection. INTJs don't just solve
+            problems; they redesign systems from first principles.
+          </p>
+          <p>
+            Where others see what is, the INTJ sees what could be — and builds a precise roadmap to
+            get there. This visionary quality, paired with exceptional capacity for independent work,
+            makes INTJs formidable in any domain requiring long-term planning, complex analysis, or
+            original thinking.
+          </p>
+          <p>
+            But the same traits that fuel INTJ excellence can create friction. Their high standards
+            extend to others, and they can be genuinely baffled when colleagues don't share their
+            rigour. Emotional expression often feels inefficient to the INTJ mind — a perspective
+            that, left unchecked, can damage relationships and team cohesion.
+          </p>
+          <p>
+            Growth for INTJs often lies not in sharpening what they already do well, but in
+            developing tolerance for ambiguity in human dynamics: learning that other people's
+            different approaches aren't defects, and that collaboration can produce outcomes
+            no single architect could design alone.
+          </p>
+        </div>
+      </section>
+
+      <!-- Strengths -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span>
+              <span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Growth edges -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span>
+              <span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Career grid -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Sidebar: 1 col -->
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <!-- At a Glance -->
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

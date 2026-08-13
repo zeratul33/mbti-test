@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "ISFJ";
+const nickname = "The Defender";
+const tagline = "Devoted, observant, and quietly powerful — the person who keeps everything together.";
+
+const strengths = [
+  "Deeply caring and loyal",
+  "Excellent memory for personal details about others",
+  "Hardworking and dependable",
+  "Patient and practical in day-to-day care",
+  "Skilled at creating safe, supportive environments",
+];
+
+const growthEdges = [
+  "Tends to repress own needs to serve others",
+  "Can be overly sensitive to criticism",
+  "Difficulty with change and uncertainty",
+  "May enable rather than confront problematic behaviour",
+  "Reluctant to ask for help when overwhelmed",
+];
+
+const careers = [
+  "Nurse / Healthcare Worker", "Elementary Teacher", "Social Worker",
+  "Office Manager", "Librarian", "Interior Designer",
+];
+
+const stats = [
+  { label: "Population", value: "~9–14%" },
+  { label: "Energy", value: "Introverted" },
+  { label: "Information", value: "Sensing" },
+  { label: "Decisions", value: "Feeling" },
+  { label: "Lifestyle", value: "Judging" },
+];
+---
+
+<BaseLayout
+  title="ISFJ — The Defender Personality Type | TypeInsight"
+  description="Full profile of the ISFJ personality: strengths, blind spots, career paths, and growth areas for The Defender."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The ISFJ — Introverted, Sensing, Feeling, Judging — is The Defender: one of the most quietly generous personalities in the framework. ISFJs show care through action rather than words — remembering the small details that matter to others, anticipating needs before they're expressed, and consistently delivering on what they promise.</p>
+          <p>ISFJs are the glue in families, teams, and communities. They rarely seek the spotlight, but the moment they step away, the gap is felt immediately. Their warmth is practical rather than effusive — they demonstrate love by doing, not by saying.</p>
+          <p>The ISFJ's challenge is reciprocity. Because they give so naturally and consistently, they sometimes fail to signal when they've reached their limit. This can lead to quiet resentment when their efforts go unacknowledged — not because they need applause, but because they need to feel that the relationship is balanced.</p>
+          <p>Growth for ISFJs involves learning to ask for what they need directly, tolerating the discomfort of being a recipient rather than always the giver, and recognising that maintaining their own wellbeing is not selfishness — it is the precondition for sustained care of others.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

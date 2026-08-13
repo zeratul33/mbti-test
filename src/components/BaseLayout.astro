@@ -1,0 +1,53 @@
+---
+import SEOHead from './SEOHead.astro';
+import Footer from './Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  faqItems?: { question: string; answer: string }[];
+}
+
+const { title, description, canonical, faqItems } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <SEOHead
+      title={title}
+      description={description}
+      canonical={canonical}
+      faqItems={faqItems}
+    />
+  </head>
+  <body class="bg-cream min-h-screen flex flex-col">
+    <header class="sticky top-0 z-50" style="background:rgba(245,239,227,0.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-line)">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="font-sans font-extrabold text-xl tracking-tight text-ink">
+          TypeInsight
+        </a>
+        <nav class="flex gap-6 text-sm text-ink-mute font-sans">
+          <a href="/" class="hover:text-ink transition-colors">Home</a>
+          <a href="/test" class="hover:text-ink transition-colors">Take the Test</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      const obs = new IntersectionObserver(
+        es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+  </body>
+</html>

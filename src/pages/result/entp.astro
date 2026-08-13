@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+
+const type = "ENTP";
+const nickname = "The Debater";
+const tagline = "Relentlessly curious, quick-witted, and constitutionally allergic to boredom.";
+
+const strengths = [
+  "Rapid lateral thinking and ideation",
+  "Excellent at arguing multiple sides",
+  "Charismatic and energising in conversation",
+  "Thrives on intellectual challenge",
+  "Innovative and entrepreneurial instincts",
+];
+
+const growthEdges = [
+  "Starts many projects, finishes few",
+  "Can argue for sport in ways that exhaust others",
+  "Prone to dismissing details as beneath them",
+  "May neglect feelings in favour of logic",
+  "Struggles with sustained routine",
+];
+
+const careers = [
+  "Entrepreneur", "Lawyer / Debater", "Product Manager",
+  "Creative Director", "Journalist", "Startup Founder",
+];
+
+const stats = [
+  { label: "Population", value: "~3%" },
+  { label: "Energy", value: "Extraverted" },
+  { label: "Information", value: "Intuitive" },
+  { label: "Decisions", value: "Thinking" },
+  { label: "Lifestyle", value: "Perceiving" },
+];
+---
+
+<BaseLayout
+  title="ENTP — The Debater Personality Type | TypeInsight"
+  description="Full profile of the ENTP personality: strengths, blind spots, career paths, and growth areas for The Debater."
+>
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <p class="mono-cap mb-4">Your Result</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-2" style="font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-0.06em;line-height:0.9">{type}</h1>
+    <p class="font-sans text-2xl font-semibold text-clay mb-4">{nickname}</p>
+    <p class="font-sans text-ink-mute max-w-xl text-base leading-relaxed">{tagline}</p>
+    <div class="mt-8">
+      <a href="/test" class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper" style="border:1px solid rgba(31,26,20,0.28)">Retake the Test</a>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 lg:grid lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2 space-y-12">
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Profile</h2>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>The ENTP — Extraverted, Intuitive, Thinking, Perceiving — is The Debater: a type that thrives in the collision of ideas. ENTPs don't just enjoy a good argument; they need it. Intellectual friction is where they do their best thinking.</p>
+          <p>ENTPs are the most entrepreneurially-minded of all types. They excel at spotting gaps in the market — or in an argument — and generating a cascade of solutions. The challenge is selection and follow-through. The idea is never the problem; the hundred meetings required to bring it to life often is.</p>
+          <p>In relationships and teams, ENTPs bring enormous energy and a talent for reframing problems in ways that unlock new directions. But their tendency to play devil's advocate — even when they don't fully believe the position — can make them seem unreliable or combative.</p>
+          <p>The ENTP's path to fulfilment generally runs through learning to pair their generative energy with disciplined execution: finding partners or systems that convert ideas into outcomes, and developing the patience to see things through.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Strengths</h2>
+        <ul class="space-y-3">
+          {strengths.map(s => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-sage font-bold mt-0.5">&#10003;</span><span>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Growth Edges</h2>
+        <ul class="space-y-3">
+          {growthEdges.map(g => (
+            <li class="flex gap-3 items-start font-sans text-sm text-ink">
+              <span class="text-clay font-bold mt-0.5">&rarr;</span><span>{g}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">Career Paths</h2>
+        <div class="flex flex-wrap gap-2">
+          {careers.map(c => (
+            <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
+                  style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="mt-12 lg:mt-0 space-y-8">
+      <div class="bg-paper rounded-[36px] p-6" style="border:1px solid var(--ink-line)">
+        <p class="mono-cap mb-4">At a Glance</p>
+        <dl class="space-y-3">
+          {stats.map(({ label, value }) => (
+            <div class="flex justify-between text-sm font-sans pb-2" style="border-bottom:1px solid var(--ink-line)">
+              <dt class="text-ink-mute">{label}</dt>
+              <dd class="text-ink font-semibold">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <AffiliateCard type="betterhelp" />
+    </aside>
+  </div>
+</BaseLayout>

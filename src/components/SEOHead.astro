@@ -1,0 +1,55 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  faqItems?: { question: string; answer: string }[];
+}
+
+const { title, description, canonical, faqItems } = Astro.props;
+const siteUrl = 'https://typeinsight.io';
+const canonicalUrl = canonical ?? Astro.url.href;
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "TypeInsight MBTI Test",
+  "url": siteUrl,
+  "description": description,
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+};
+
+const faqSchema = faqItems ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+  })),
+} : null;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content="TypeInsight" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+
+<!-- JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}

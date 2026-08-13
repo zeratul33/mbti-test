@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import AdSensePlaceholder from '../components/AdSensePlaceholder.astro';
+import MBTITestIsland from '../components/MBTITestIsland';
+
+const faqItems = [
+  {
+    question: "Is this test the official MBTI?",
+    answer: "No. TypeInsight is an independent personality assessment inspired by Jungian typology and the Myers-Briggs framework. The official MBTI® is a registered instrument by The Myers-Briggs Company. Our test is for educational and entertainment purposes only.",
+  },
+  {
+    question: "How accurate is this test?",
+    answer: "Research on MBTI-style instruments shows test-retest reliability ranging from 0.61 to 0.87 over short periods. Type assignments can shift over time and context. Use your result as one lens, not a fixed label.",
+  },
+  {
+    question: "How long does the test take?",
+    answer: "Most people complete all 10 questions in under three minutes. There is no time pressure — answer thoughtfully.",
+  },
+  {
+    question: "Do I need to create an account?",
+    answer: "No account, no email, no sign-up. The test runs entirely in your browser and we do not store your answers.",
+  },
+  {
+    question: "What do I do after I get my result?",
+    answer: "Read your full type profile to understand your cognitive style, strengths, and growth edges. If you want to explore your type further with a professional, our result page links to therapist-matching services.",
+  },
+];
+---
+
+<BaseLayout
+  title="Free MBTI Personality Test — 10 Questions | TypeInsight"
+  description="Take our free, research-based MBTI-style personality test. 10 questions, instant results, no sign-up required."
+  faqItems={faqItems}
+>
+  <div class="max-w-5xl mx-auto px-6 pt-14 pb-20">
+    <div class="mb-12">
+      <p class="mono-cap mb-4">Free Test</p>
+      <h1 class="font-sans font-extrabold text-4xl md:text-5xl text-ink mb-4"
+          style="letter-spacing:-0.05em;">
+        Discover Your Personality Type
+      </h1>
+      <p class="text-ink-mute font-sans text-base max-w-xl leading-relaxed">
+        Answer honestly — there are no right or wrong answers. Choose the option that
+        feels most natural, not the one you think you should choose.
+      </p>
+    </div>
+
+    <AdSensePlaceholder format="horizontal" />
+
+    <div class="py-8">
+      <MBTITestIsland client:load />
+    </div>
+
+    <AdSensePlaceholder format="rectangle" />
+
+    <!-- Science article -->
+    <article class="max-w-2xl mt-16 pt-12 font-sans text-ink">
+      <h2 class="font-sans font-extrabold text-3xl mb-6" style="letter-spacing:-0.04em;">The Science Behind Personality Types</h2>
+
+      <h3 class="font-sans font-extrabold text-xl mb-3 mt-8" style="letter-spacing:-0.03em;">Carl Jung and the Origins of Type Theory</h3>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        The idea that human beings can be grouped into distinct personality categories stretches
+        back to ancient Greece, but the modern framework descends directly from the Swiss
+        psychiatrist Carl Gustav Jung. In his 1921 work <em>Psychological Types</em>, Jung
+        proposed that people differ fundamentally in how they direct mental energy (introversion
+        versus extraversion) and how they perceive the world and make decisions. These preferences,
+        he argued, were not deficits or pathologies but stable orientations that shaped behaviour
+        across the lifespan.
+      </p>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        Jung identified two primary <em>attitudes</em> — Introversion (I) and Extraversion (E) —
+        and four <em>functions</em>: Sensing, Intuition, Thinking, and Feeling. The dominant
+        function, combined with the attitudinal orientation, produces eight basic psychological
+        types in Jung's original model.
+      </p>
+
+      <h3 class="font-sans font-extrabold text-xl mb-3 mt-8" style="letter-spacing:-0.03em;">From Jung to Myers-Briggs</h3>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        During World War II, Katharine Cook Briggs and her daughter Isabel Briggs Myers set out
+        to make Jung's abstract theory practically useful. They believed that if people understood
+        their own type — and the types of those around them — they could find work better suited
+        to their strengths and collaborate more effectively. Over two decades of iterative
+        development, they constructed a self-report questionnaire that eventually became the
+        Myers-Briggs Type Indicator® (MBTI®), first published in 1962.
+      </p>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        Myers and Briggs added a fourth dichotomy not explicit in Jung's original writing:
+        Judging (J) versus Perceiving (P), describing how a person orients themselves to the
+        outer world — preferring closure and structure, or openness and flexibility. Combined
+        with the other three dimensions, this produces 16 distinct four-letter type codes still
+        used widely today.
+      </p>
+
+      <h3 class="font-sans font-extrabold text-xl mb-3 mt-8" style="letter-spacing:-0.03em;">The Four Dimensions Explained</h3>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        <strong class="text-ink">Extraversion (E) vs. Introversion (I)</strong> — This
+        dimension concerns the direction of energy flow. Extraverts are energised by social
+        interaction and external stimulation; they think out loud and prefer breadth of connection.
+        Introverts restore energy through solitude and inward reflection; they favour depth over
+        breadth and often process extensively before speaking.
+      </p>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        <strong class="text-ink">Sensing (S) vs. Intuition (N)</strong> — This dimension
+        describes how people take in information. Sensing types trust direct, concrete experience.
+        They are detail-oriented, practical, and grounded in the present. Intuitive types
+        gravitate toward patterns, possibilities, and the big picture. They are comfortable with
+        abstraction and often project forward into potential futures.
+      </p>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        <strong class="text-ink">Thinking (T) vs. Feeling (F)</strong> — This dimension
+        concerns decision-making. Thinking types prioritise logical consistency and objective
+        criteria; they are comfortable delivering difficult feedback if the facts support it.
+        Feeling types weigh interpersonal impact and personal values; they seek harmony and
+        consider how decisions affect the people involved.
+      </p>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        <strong class="text-ink">Judging (J) vs. Perceiving (P)</strong> — This dimension
+        describes how people relate to structure. Judging types prefer closure: they like plans,
+        schedules, and decisions made. Perceiving types prefer to keep options open: they adapt
+        fluidly and often do their best work when allowed to improvise.
+      </p>
+
+      <h3 class="font-sans font-extrabold text-xl mb-3 mt-8" style="letter-spacing:-0.03em;">Reliability, Validity, and Critique</h3>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        The MBTI has been the subject of substantial empirical scrutiny. Test-retest reliability
+        studies — where the same person takes the test twice within a few weeks — show correlations
+        in the range of 0.61 to 0.87 depending on the dimension. A notable finding from longitudinal
+        research is that roughly 35–50% of respondents receive a different four-letter type when
+        retested after five weeks, most often flipping on a single dimension close to the midpoint.
+      </p>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        Critics argue that the forced binary format (you must choose E or I, not a continuous
+        score) artificially polarises people who fall near the midpoint of any dimension. The
+        Big Five personality model — which measures Openness, Conscientiousness, Extraversion,
+        Agreeableness, and Neuroticism on continuous scales — is generally regarded as having
+        stronger predictive validity for outcomes like job performance and academic achievement.
+      </p>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        Despite these limitations, the MBTI remains one of the most widely used personality
+        frameworks in organisational development, career counselling, and team building, with
+        millions of assessments administered each year. Used thoughtfully — as a starting point
+        for self-reflection rather than a fixed label — personality typing can offer genuine
+        insight.
+      </p>
+
+      <h3 class="font-sans font-extrabold text-xl mb-3 mt-8" style="letter-spacing:-0.03em;">Practical Applications</h3>
+      <p class="text-ink-mute leading-relaxed mb-4">
+        Where personality typing delivers the most practical value is in raising self-awareness.
+        Understanding that your discomfort in open-plan offices may reflect genuine introversion —
+        not antisocial behaviour — can help you design better working conditions. Recognising
+        that a colleague's need for structured agendas reflects a Judging preference — not
+        rigidity — can reduce interpersonal friction.
+      </p>
+      <p class="text-ink-mute leading-relaxed">
+        Career research on MBTI type suggests meaningful correlations between type and occupational
+        preferences. Thinking-Judging types frequently gravitate toward roles in engineering,
+        law, and management. Feeling-Perceiving types often find fulfilment in counselling,
+        arts, and education. Intuitive types tend to be overrepresented in academic and creative
+        fields. These are tendencies, not destinies — but they are useful anchors when navigating
+        career decisions.
+      </p>
+    </article>
+
+    <!-- FAQ accordion -->
+    <section class="max-w-2xl mt-14 pt-12">
+      <h2 class="font-sans font-extrabold text-2xl text-ink mb-8" style="letter-spacing:-0.04em;">Frequently Asked Questions</h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details open={i === 0} class="rounded-[28px] bg-paper px-6 py-5" style="border:1px solid var(--ink-line);">
+            <summary class="font-sans font-semibold text-ink cursor-pointer list-none flex justify-between items-center text-sm">
+              {item.question}
+              <span class="text-ink-mute ml-4">&#9650;</span>
+            </summary>
+            <p class="mt-4 text-ink-mute font-sans text-sm leading-relaxed">
+              {item.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+      <style>details[open] { border-color: #C2855E !important; }</style>
+    </section>
+  </div>
+</BaseLayout>
