@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 
 export default defineConfig({
-  site: 'https://typeinsight.io',
+  site: 'https://mbti-style.ciciad.tech',
   output: 'static',
   vite: {
     plugins: [tailwindcss()],
