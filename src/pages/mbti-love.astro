@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+
+const types = [
+  { code: "INTJ", nickname: "The Architect", loveSummary: "Deliberate and loyal — bonds through intellectual depth and long-term commitment." },
+  { code: "INTP", nickname: "The Logician", loveSummary: "Quietly devoted — offers authentic companionship and full acceptance." },
+  { code: "ENTJ", nickname: "The Commander", loveSummary: "Direct and ambitious — pursues relationships with the same drive as goals." },
+  { code: "ENTP", nickname: "The Debater", loveSummary: "Intellectually stimulating — romance as exploration and mutual challenge." },
+  { code: "INFJ", nickname: "The Advocate", loveSummary: "Rare depth and intentionality — sees partners at a level few others reach." },
+  { code: "INFP", nickname: "The Mediator", loveSummary: "Deeply romantic — seeks a soulmate connection full of meaning and tenderness." },
+  { code: "ENFJ", nickname: "The Protagonist", loveSummary: "Devoted and attuned — love expressed through consistent care and presence." },
+  { code: "ENFP", nickname: "The Campaigner", loveSummary: "Passionate and curious — falls hard and invests in a partner's growth." },
+  { code: "ISTJ", nickname: "The Inspector", loveSummary: "Love through proof — shows up, follows through, and stays." },
+  { code: "ISFJ", nickname: "The Defender", loveSummary: "Devoted service — remembers every detail and creates quiet, lasting comfort." },
+  { code: "ESTJ", nickname: "The Executive", loveSummary: "Reliable and committed — love through consistency and shared responsibility." },
+  { code: "ESFJ", nickname: "The Consul", loveSummary: "Relationship-centred — anticipates needs and creates warmth and stability." },
+  { code: "ISTP", nickname: "The Virtuoso", loveSummary: "Quiet loyalty — care shown through action, autonomy, and being present in a crisis." },
+  { code: "ISFP", nickname: "The Adventurer", loveSummary: "Sensory and present — genuine warmth expressed through touch and shared experience." },
+  { code: "ESTP", nickname: "The Entrepreneur", loveSummary: "Bold and energetic — makes the present feel alive for the people they love." },
+  { code: "ESFP", nickname: "The Entertainer", loveSummary: "Vivid and affectionate — celebrates a partner and brings joy to the everyday." },
+];
+
+const faqItems = [
+  {
+    question: "最もロマンチックなMBTIタイプは？/ 最浪漫的MBTI类型是哪个？",
+    answer: "ENFJ and INFJ are often considered the most romantically attentive types — deeply empathetic, emotionally expressive, and partner-focused. ENFP brings spontaneity and warmth that many find irresistible.",
+  },
+  {
+    question: "MBTI 恋愛 — どのタイプが相性いい？(Which types are compatible?)",
+    answer: "Intuitive types (N) tend to pair well together due to shared depth of conversation. Sensing types (S) often align on practical values and present-focused living. Opposite types like INTJ+ENFP can complement each other's weaknesses powerfully.",
+  },
+  {
+    question: "Can MBTI predict relationship success?",
+    answer: "MBTI alone is not a reliable predictor of relationship success. Attachment style, values alignment, and communication patterns show stronger predictive power. MBTI is most useful for understanding why conflicts arise and bridging communication differences.",
+  },
+];
+---
+
+<BaseLayout
+  title="MBTI Love & Compatibility Guide — 恋愛タイプ | TypeInsight"
+  description="Discover how all 16 MBTI types love and relate. Romantic styles, compatibility, and relationship advice — MBTI 恋愛 / 恋爱 guide."
+  faqItems={faqItems}
+>
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-10">
+    <p class="mono-cap mb-4">Relationships</p>
+    <h1 class="font-sans font-extrabold text-ink leading-none mb-3"
+        style="font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:-0.05em;line-height:0.92">
+      MBTI Love &amp; Relationships
+    </h1>
+    <p class="font-sans text-base text-ink-mute mb-1">
+      <span lang="ja">恋愛タイプ診断 — ラブ タイプ</span>
+    </p>
+    <p class="font-sans text-ink-mute max-w-2xl text-base leading-relaxed mt-4">
+      How do all 16 MBTI types approach romance? Explore each type's love style, what they need in a partner, and their central relationship challenge — then take the test to find your own type.
+    </p>
+    <div class="mt-8">
+      <a
+        href="/test"
+        class="inline-block font-sans text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:bg-ink hover:text-paper"
+        style="border:1px solid rgba(31,26,20,0.28)"
+      >
+        Find Your Type
+      </a>
+    </div>
+  </section>
+
+  <!-- 16-type card grid -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="font-sans font-extrabold text-xl text-ink mb-2" style="letter-spacing:-0.04em;">
+      All 16 Types — Love at a Glance
+    </h2>
+    <p class="font-sans text-xs text-ink-mute mb-8" style="letter-spacing:0.02em;">
+      <span lang="ja">MBTIタイプ別 恋愛スタイル</span> &nbsp;/&nbsp; <span lang="zh-Hans">16种MBTI类型恋爱风格</span>
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {types.map(({ code, nickname, loveSummary }) => (
+        <a
+          href={`/result/${code.toLowerCase()}`}
+          class="block p-5 font-sans transition-colors hover:border-ink"
+          style="border:1px solid var(--ink-line);background:var(--paper)"
+        >
+          <p class="font-extrabold text-xl text-ink mb-0.5" style="letter-spacing:-0.04em;">{code}</p>
+          <p class="text-xs text-muted mb-3">{nickname}</p>
+          <p class="text-sm text-ink-mute leading-relaxed">{loveSummary}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Compatibility prose -->
+  <section class="max-w-5xl mx-auto px-6 py-12" style="border-top:1px solid var(--ink-line)">
+    <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">
+      Which types are most compatible?
+    </h2>
+    <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4 max-w-2xl">
+      <p>
+        MBTI compatibility is most reliable as a framework for understanding communication differences rather than predicting attraction. That said, certain patterns emerge consistently: Intuitive types (N) tend to bond deeply with other Intuitives, because they share the orientation toward ideas, meaning, and abstract conversation. Sensing types (S) often find natural resonance with other Sensors, grounded in shared practical values and present-focused living.
+      </p>
+      <p>
+        Opposite types — INTJ and ENFP, for instance, or INFJ and ENTP — frequently form powerful partnerships because each brings what the other lacks. The INTJ's strategic depth balances the ENFP's emotional spontaneity; the INFJ's quiet intensity finds relief in the ENTP's playful irreverence. These complementary pairings can be challenging to sustain but deeply rewarding when both people are willing to grow.
+      </p>
+    </div>
+  </section>
+
+  <!-- How to use MBTI in your relationship -->
+  <section class="max-w-5xl mx-auto px-6 py-12" style="border-top:1px solid var(--ink-line)">
+    <h2 class="font-sans font-extrabold text-xl text-ink mb-5" style="letter-spacing:-0.04em;">
+      How to use MBTI in your relationship
+    </h2>
+    <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4 max-w-2xl">
+      <p>
+        The most useful application of MBTI in a relationship is not to determine whether two people are "compatible" — it is to explain recurring patterns of friction. When an ISTJ partner repeatedly feels frustrated by what they perceive as unreliability, and the ENFP partner feels constrained by what feels like rigidity, MBTI gives both people a language for what is happening without making either the villain.
+      </p>
+      <p>
+        Understanding your partner's type helps you interpret their behaviour charitably. An INTP who goes quiet for three days is not punishing you — they are recharging. An ENFJ who asks constantly how you're feeling is not being intrusive — they are expressing care in the language that feels natural to them.
+      </p>
+      <p>
+        Use type awareness to open conversations, not to close them. The most important thing any MBTI framework can teach you is that there are legitimate, deep differences in how people experience the world — and that those differences are not defects to be corrected, but starting points for genuine understanding.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

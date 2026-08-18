@@ -34,11 +34,31 @@ const stats = [
   { label: "Decisions", value: "Feeling" },
   { label: "Lifestyle", value: "Perceiving" },
 ];
+
+const loveStyle = {
+  summary: `ESFPs are vivid, physically affectionate, and present-focused in romance. They bring excitement, fun, and genuine warmth to relationships and are naturally gifted at making a partner feel seen and celebrated in the moment. Love, for an ESFP, is meant to be felt — not planned.`,
+  what_they_need: `A partner who is up for adventure, comfortable with spontaneity, and doesn't treat every day as a logistical problem to solve. ESFPs need to feel free to be themselves without constant expectation management or emotional heaviness.`,
+  challenge: `Long-term planning and navigating relationship depth. ESFPs excel in the early stages of romance but can find the heavier emotional work of sustained commitment — conflict resolution, future planning, sitting with difficulty — less intuitive territory. Growing through those stages is where real intimacy is built.`,
+};
 ---
 
 <BaseLayout
-  title="ESFP — The Entertainer Personality Type | TypeInsight"
-  description="Full profile of the ESFP personality: strengths, blind spots, career paths, and growth areas for The Entertainer."
+  title="ESFP Personality: Love, Strengths & Careers | TypeInsight"
+  description="How does the ESFP love? Romantic style, relationship needs, career paths and growth areas for The Entertainer. MBTI 恋愛 ESFP / ESFP 恋爱."
+  faqItems={[
+    {
+      question: "How does an ESFP act in a romantic relationship?",
+      answer: "ESFPs are spontaneous, physically affectionate partners who bring fun and warmth to romance. They excel at making a partner feel celebrated in the present moment, though sustaining the deeper work of long-term partnership requires deliberate growth.",
+    },
+    {
+      question: "ESFP の恋愛スタイルは？(ESFP love style / ESFP 恋爱风格)",
+      answer: "ESFP types love with presence and energy — they are vivid, sensory, and generous partners. They are most fulfilled with partners who share their love of adventure and don't require emotional heaviness as proof of commitment.",
+    },
+    {
+      question: "What MBTI type is most compatible with ESFP?",
+      answer: "ISFJs and ISTJs are often cited as strong ESFP matches — their reliability and structure complement the ESFP's spontaneity, providing the stability that allows the ESFP's energy to flourish sustainably. ISFJ is a particularly common pairing.",
+    },
+  ]}
 >
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
     <p class="mono-cap mb-4">Your Result</p>
@@ -105,6 +125,27 @@ const stats = [
             <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
                   style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
           ))}
+        </div>
+      </section>
+
+      <!-- Love & Relationships -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-2" style="letter-spacing:-0.04em;">
+          Love &amp; Relationships
+        </h2>
+        <p class="font-sans text-xs text-ink-mute mb-5" style="letter-spacing:0.02em;">
+          <span lang="ja">恋愛スタイル</span> &nbsp;/&nbsp; <span lang="zh-Hans">恋爱类型</span>
+        </p>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>{loveStyle.summary}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            What they need in a partner
+          </h3>
+          <p>{loveStyle.what_they_need}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            Relationship challenge
+          </h3>
+          <p>{loveStyle.challenge}</p>
         </div>
       </section>
     </div>

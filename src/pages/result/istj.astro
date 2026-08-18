@@ -34,11 +34,31 @@ const stats = [
   { label: "Decisions", value: "Thinking" },
   { label: "Lifestyle", value: "Judging" },
 ];
+
+const loveStyle = {
+  summary: `ISTJs are steadfast, responsible, and deeply loyal partners. They show love through consistency — keeping commitments, maintaining stability, and being reliably present over years and decades. An ISTJ's love may not come with poetry, but it comes with proof: they are there, every time.`,
+  what_they_need: `Clarity, reliability, and a partner who takes their commitments as seriously as they do. ISTJs invest heavily in relationships they believe in and need to know that investment is mutual. Broken promises erode trust in ways that are difficult to repair.`,
+  challenge: `Adapting to emotional change and expressing affection. ISTJs can struggle when a partner's emotional needs shift unexpectedly or when the relationship requires departing from established patterns. Developing emotional flexibility — meeting a partner's present state rather than their expected state — takes deliberate effort.`,
+};
 ---
 
 <BaseLayout
-  title="ISTJ — The Inspector Personality Type | TypeInsight"
-  description="Full profile of the ISTJ personality: strengths, blind spots, career paths, and growth areas for The Inspector."
+  title="ISTJ Personality: Love, Strengths & Careers | TypeInsight"
+  description="How does the ISTJ love? Romantic style, relationship needs, career paths and growth areas for The Inspector. MBTI 恋愛 ISTJ / ISTJ 恋爱."
+  faqItems={[
+    {
+      question: "How does an ISTJ act in a romantic relationship?",
+      answer: "ISTJs are steadfast, reliable partners who express love through consistency and kept promises. They are deeply loyal and build relationships on a foundation of trust and shared responsibility — but may need to consciously work on emotional expression and flexibility.",
+    },
+    {
+      question: "ISTJ の恋愛スタイルは？(ISTJ love style / ISTJ 恋爱风格)",
+      answer: "ISTJ types love through proof: they show up, they follow through, and they stay. Their love language is reliability. They need a partner who matches their commitment level and understands that consistency is their deepest form of affection.",
+    },
+    {
+      question: "What MBTI type is most compatible with ISTJ?",
+      answer: "ESFPs and ESTPs are often cited as complementary matches for ISTJs — they bring warmth, spontaneity, and present-focus that balances the ISTJ's structured and traditional orientation. ESFP is a particularly common pairing.",
+    },
+  ]}
 >
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
     <p class="mono-cap mb-4">Your Result</p>
@@ -105,6 +125,27 @@ const stats = [
             <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
                   style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
           ))}
+        </div>
+      </section>
+
+      <!-- Love & Relationships -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-2" style="letter-spacing:-0.04em;">
+          Love &amp; Relationships
+        </h2>
+        <p class="font-sans text-xs text-ink-mute mb-5" style="letter-spacing:0.02em;">
+          <span lang="ja">恋愛スタイル</span> &nbsp;/&nbsp; <span lang="zh-Hans">恋爱类型</span>
+        </p>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>{loveStyle.summary}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            What they need in a partner
+          </h3>
+          <p>{loveStyle.what_they_need}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            Relationship challenge
+          </h3>
+          <p>{loveStyle.challenge}</p>
         </div>
       </section>
     </div>

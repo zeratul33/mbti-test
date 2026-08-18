@@ -34,11 +34,31 @@ const stats = [
   { label: "Decisions", value: "Feeling" },
   { label: "Lifestyle", value: "Perceiving" },
 ];
+
+const loveStyle = {
+  summary: `INFPs are deeply romantic by nature, approaching love as a search for a genuine soulmate connection. They don't fall lightly — but when they do, they invest with an intensity that goes well beyond the surface. For an INFP, love is a vessel for meaning, and they bring extraordinary tenderness and creativity to the people they choose.`,
+  what_they_need: `A partner who values depth, authenticity, and emotional honesty. INFPs need to feel truly seen — not just liked. They wilt in relationships where performance or pretence is required, and thrive with partners who accept them exactly as they are.`,
+  challenge: `Idealising partners and then experiencing sharp disappointment when reality doesn't match the image. INFPs can fall for potential rather than the person in front of them. Learning to hold love lightly — appreciating what is rather than mourning what could be — is their central relationship work.`,
+};
 ---
 
 <BaseLayout
-  title="INFP — The Mediator Personality Type | TypeInsight"
-  description="Full profile of the INFP personality: strengths, blind spots, career paths, and growth areas for The Mediator."
+  title="INFP Personality: Love, Strengths & Careers | TypeInsight"
+  description="How does the INFP love? Romantic style, relationship needs, career paths and growth areas for The Mediator. MBTI 恋愛 INFP / INFP 恋爱."
+  faqItems={[
+    {
+      question: "How does an INFP act in a romantic relationship?",
+      answer: "INFPs are idealistic, tender partners who seek a deep soulmate connection. They express love through creative gestures, quality time, and authentic emotional presence — and need a partner who meets them with equal sincerity.",
+    },
+    {
+      question: "INFP の恋愛スタイルは？(INFP love style / INFP 恋爱风格)",
+      answer: "INFP types approach romance as a search for meaning and genuine connection. They are deeply loyal once committed but can idealise partners. They need authenticity and emotional depth above practical compatibility.",
+    },
+    {
+      question: "What MBTI type is most compatible with INFP?",
+      answer: "ENFJs are frequently cited as an excellent match for INFPs — offering the warmth, structure, and outward focus that complements the INFP's inner-directedness. ENTJs and INFJs can also form strong bonds with INFPs.",
+    },
+  ]}
 >
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
     <p class="mono-cap mb-4">Your Result</p>
@@ -105,6 +125,27 @@ const stats = [
             <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
                   style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
           ))}
+        </div>
+      </section>
+
+      <!-- Love & Relationships -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-2" style="letter-spacing:-0.04em;">
+          Love &amp; Relationships
+        </h2>
+        <p class="font-sans text-xs text-ink-mute mb-5" style="letter-spacing:0.02em;">
+          <span lang="ja">恋愛スタイル</span> &nbsp;/&nbsp; <span lang="zh-Hans">恋爱类型</span>
+        </p>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>{loveStyle.summary}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            What they need in a partner
+          </h3>
+          <p>{loveStyle.what_they_need}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            Relationship challenge
+          </h3>
+          <p>{loveStyle.challenge}</p>
         </div>
       </section>
     </div>

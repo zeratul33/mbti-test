@@ -34,11 +34,31 @@ const stats = [
   { label: "Decisions", value: "Feeling" },
   { label: "Lifestyle", value: "Perceiving" },
 ];
+
+const loveStyle = {
+  summary: `ISFPs are gentle, sensory, and intensely present in love. They don't perform affection — they live it, through touch, shared experience, and quiet acts of care. An ISFP in love is authentically warm and deeply loyal to the people they choose, even if that loyalty is rarely announced.`,
+  what_they_need: `Freedom to be fully themselves and a partner who values authentic connection over social performance. ISFPs are sensitive to inauthenticity and disengage from relationships that require them to perform a version of themselves they don't recognise.`,
+  challenge: `Articulating needs and navigating conflict. ISFPs tend to avoid confrontation, sometimes withdrawing entirely rather than naming a problem. This avoidance protects them in the short term but can quietly accumulate into distance that becomes difficult to bridge.`,
+};
 ---
 
 <BaseLayout
-  title="ISFP — The Adventurer Personality Type | TypeInsight"
-  description="Full profile of the ISFP personality: strengths, blind spots, career paths, and growth areas for The Adventurer."
+  title="ISFP Personality: Love, Strengths & Careers | TypeInsight"
+  description="How does the ISFP love? Romantic style, relationship needs, career paths and growth areas for The Adventurer. MBTI 恋愛 ISFP / ISFP 恋爱."
+  faqItems={[
+    {
+      question: "How does an ISFP act in a romantic relationship?",
+      answer: "ISFPs are gentle, authentic partners who express love through presence and quiet acts of care. They are deeply loyal but tend to avoid conflict — which can allow unaddressed issues to build over time. They need partners who value authenticity over performance.",
+    },
+    {
+      question: "ISFP の恋愛スタイルは？(ISFP love style / ISFP 恋爱风格)",
+      answer: "ISFP types love with sensory warmth and genuine loyalty. They are present-focused and expressive through action rather than words. They are most fulfilled with partners who honour their need for freedom and authentic self-expression.",
+    },
+    {
+      question: "What MBTI type is most compatible with ISFP?",
+      answer: "ESFJs and ENFJs are often cited as complementary matches for ISFPs — they offer warmth, structure, and outward expressiveness that balances the ISFP's quieter, more private style. ESFJ is a particularly common pairing.",
+    },
+  ]}
 >
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
     <p class="mono-cap mb-4">Your Result</p>
@@ -105,6 +125,27 @@ const stats = [
             <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
                   style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
           ))}
+        </div>
+      </section>
+
+      <!-- Love & Relationships -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-2" style="letter-spacing:-0.04em;">
+          Love &amp; Relationships
+        </h2>
+        <p class="font-sans text-xs text-ink-mute mb-5" style="letter-spacing:0.02em;">
+          <span lang="ja">恋愛スタイル</span> &nbsp;/&nbsp; <span lang="zh-Hans">恋爱类型</span>
+        </p>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>{loveStyle.summary}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            What they need in a partner
+          </h3>
+          <p>{loveStyle.what_they_need}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            Relationship challenge
+          </h3>
+          <p>{loveStyle.challenge}</p>
         </div>
       </section>
     </div>

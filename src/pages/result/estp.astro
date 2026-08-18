@@ -34,11 +34,31 @@ const stats = [
   { label: "Decisions", value: "Thinking" },
   { label: "Lifestyle", value: "Perceiving" },
 ];
+
+const loveStyle = {
+  summary: `ESTPs are bold, energetic, and action-oriented in romance. They are direct about attraction, confident in pursuit, and genuinely fun to be around — bringing spontaneity and physical energy to a relationship. They live in the present and make the present feel alive for their partners.`,
+  what_they_need: `A partner who values independence, matches their physical energy, and doesn't require constant emotional depth or verbal reassurance. ESTPs need space to act and explore; possessiveness or emotional pressure suffocates them.`,
+  challenge: `Long-term commitment and emotional vulnerability. ESTPs can find sustained intimacy — the kind that requires sitting still and going inward — genuinely uncomfortable. Moving from thrill-seeking to real partnership depth is their central relationship challenge.`,
+};
 ---
 
 <BaseLayout
-  title="ESTP — The Entrepreneur Personality Type | TypeInsight"
-  description="Full profile of the ESTP personality: strengths, blind spots, career paths, and growth areas for The Entrepreneur."
+  title="ESTP Personality: Love, Strengths & Careers | TypeInsight"
+  description="How does the ESTP love? Romantic style, relationship needs, career paths and growth areas for The Entrepreneur. MBTI 恋愛 ESTP / ESTP 恋爱."
+  faqItems={[
+    {
+      question: "How does an ESTP act in a romantic relationship?",
+      answer: "ESTPs are bold, energetic partners who live in the present and make the present feel exciting. They are direct about attraction and genuinely fun, but long-term emotional depth and sustained commitment require deliberate effort from them.",
+    },
+    {
+      question: "ESTP の恋愛スタイルは？(ESTP love style / ESTP 恋爱风格)",
+      answer: "ESTP types bring spontaneity, confidence, and physical energy to romance. They are most comfortable with partners who value independence and don't require constant emotional processing or verbal reassurance.",
+    },
+    {
+      question: "What MBTI type is most compatible with ESTP?",
+      answer: "ISFJs and ISTJs are often cited as grounding matches for ESTPs — their reliability and warmth complement the ESTP's action-orientation. ISFJ is a particularly common pairing that balances the ESTP's energy with emotional steadiness.",
+    },
+  ]}
 >
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
     <p class="mono-cap mb-4">Your Result</p>
@@ -105,6 +125,27 @@ const stats = [
             <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
                   style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
           ))}
+        </div>
+      </section>
+
+      <!-- Love & Relationships -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-2" style="letter-spacing:-0.04em;">
+          Love &amp; Relationships
+        </h2>
+        <p class="font-sans text-xs text-ink-mute mb-5" style="letter-spacing:0.02em;">
+          <span lang="ja">恋愛スタイル</span> &nbsp;/&nbsp; <span lang="zh-Hans">恋爱类型</span>
+        </p>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>{loveStyle.summary}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            What they need in a partner
+          </h3>
+          <p>{loveStyle.what_they_need}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            Relationship challenge
+          </h3>
+          <p>{loveStyle.challenge}</p>
         </div>
       </section>
     </div>

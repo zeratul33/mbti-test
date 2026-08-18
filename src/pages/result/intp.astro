@@ -34,11 +34,31 @@ const stats = [
   { label: "Decisions", value: "Thinking" },
   { label: "Lifestyle", value: "Perceiving" },
 ];
+
+const loveStyle = {
+  summary: `INTPs are unconventional, genuine, and quietly devoted once they have chosen a partner. They don't perform romance — what they offer is authentic intellectual companionship, loyalty, and the rare experience of being accepted exactly as you are. An INTP's love is understated but it is real.`,
+  what_they_need: `A partner who values intellectual exploration and respects their need for extended alone time. INTPs need significant mental autonomy and are most comfortable with partners who have their own rich inner life and don't require constant social engagement.`,
+  challenge: `Relationship maintenance and emotional expression. INTPs can forget that relationships require regular tending — that a partner needs presence and acknowledgment, not just occasional profound connection. Translating internal care into visible behaviour is real growth work for this type.`,
+};
 ---
 
 <BaseLayout
-  title="INTP — The Logician Personality Type | TypeInsight"
-  description="Full profile of the INTP personality: strengths, blind spots, career paths, and growth areas for The Logician."
+  title="INTP Personality: Love, Strengths & Careers | TypeInsight"
+  description="How does the INTP love? Romantic style, relationship needs, career paths and growth areas for The Logician. MBTI 恋愛 INTP / INTP 恋爱."
+  faqItems={[
+    {
+      question: "How does an INTP act in a romantic relationship?",
+      answer: "INTPs are genuine, unconventional partners who offer intellectual depth and quiet loyalty. They don't perform romance — they offer authentic presence and the rare gift of full acceptance. But they must actively work to maintain emotional connection and make care visible.",
+    },
+    {
+      question: "INTP の恋愛スタイルは？(INTP love style / INTP 恋爱风格)",
+      answer: "INTP types love authentically but quietly. They bond through shared intellectual curiosity and give their partners full autonomy. Their challenge is translating deep internal care into the external gestures and presence a partner can actually experience.",
+    },
+    {
+      question: "What MBTI type is most compatible with INTP?",
+      answer: "ENTJs and ENFJs are often cited as strong INTP matches — they provide the external structure, warmth, and social energy that balances the INTP's introverted analytical nature. ENTJ is a particularly common pairing with strong intellectual chemistry.",
+    },
+  ]}
 >
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
     <p class="mono-cap mb-4">Your Result</p>
@@ -107,6 +127,27 @@ const stats = [
             <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
                   style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
           ))}
+        </div>
+      </section>
+
+      <!-- Love & Relationships -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-2" style="letter-spacing:-0.04em;">
+          Love &amp; Relationships
+        </h2>
+        <p class="font-sans text-xs text-ink-mute mb-5" style="letter-spacing:0.02em;">
+          <span lang="ja">恋愛スタイル</span> &nbsp;/&nbsp; <span lang="zh-Hans">恋爱类型</span>
+        </p>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>{loveStyle.summary}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            What they need in a partner
+          </h3>
+          <p>{loveStyle.what_they_need}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            Relationship challenge
+          </h3>
+          <p>{loveStyle.challenge}</p>
         </div>
       </section>
     </div>

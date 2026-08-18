@@ -34,11 +34,31 @@ const stats = [
   { label: "Decisions", value: "Thinking" },
   { label: "Lifestyle", value: "Perceiving" },
 ];
+
+const loveStyle = {
+  summary: `ENTPs approach romance with intellectual curiosity and playful irreverence. They are stimulating, witty, and endlessly interested in exploring ideas alongside a partner. An ENTP in a committed relationship becomes a genuine champion of their partner's potential — often pushing them toward growth they hadn't imagined.`,
+  what_they_need: `A partner who relishes debate, doesn't take contrarianism personally, and brings their own intellectual fire. ENTPs lose interest quickly if conversation stays shallow or if a partner expects them to perform emotional attunement they don't yet have.`,
+  challenge: `Emotional consistency. ENTPs can be outstanding problem-solvers and poor emotional supporters — jumping to solutions when a partner simply needs to be heard. Developing the habit of sitting with feelings rather than fixing them is real growth territory.`,
+};
 ---
 
 <BaseLayout
-  title="ENTP — The Debater Personality Type | TypeInsight"
-  description="Full profile of the ENTP personality: strengths, blind spots, career paths, and growth areas for The Debater."
+  title="ENTP Personality: Love, Strengths & Careers | TypeInsight"
+  description="How does the ENTP love? Romantic style, relationship needs, career paths and growth areas for The Debater. MBTI 恋愛 ENTP / ENTP 恋爱."
+  faqItems={[
+    {
+      question: "How does an ENTP act in a romantic relationship?",
+      answer: "ENTPs are intellectually stimulating, playful partners who bond through debate, ideas, and mutual exploration. They are genuinely invested in a partner's growth, but need to consciously develop emotional attunement alongside their natural analytical style.",
+    },
+    {
+      question: "ENTP の恋愛スタイルは？(ENTP love style / ENTP 恋爱风格)",
+      answer: "ENTP types approach romance with curiosity and wit. They need mental sparring partners who won't take their contrarianism personally. Love for an ENTP is an intellectual adventure as much as an emotional one.",
+    },
+    {
+      question: "What MBTI type is most compatible with ENTP?",
+      answer: "INTJs and INFJs are often cited as strong ENTP matches — they share the Intuitive depth that enables real connection while providing the groundedness that balances the ENTP's restlessness. INTJ is a particularly common pairing.",
+    },
+  ]}
 >
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
     <p class="mono-cap mb-4">Your Result</p>
@@ -105,6 +125,27 @@ const stats = [
             <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
                   style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
           ))}
+        </div>
+      </section>
+
+      <!-- Love & Relationships -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-2" style="letter-spacing:-0.04em;">
+          Love &amp; Relationships
+        </h2>
+        <p class="font-sans text-xs text-ink-mute mb-5" style="letter-spacing:0.02em;">
+          <span lang="ja">恋愛スタイル</span> &nbsp;/&nbsp; <span lang="zh-Hans">恋爱类型</span>
+        </p>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>{loveStyle.summary}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            What they need in a partner
+          </h3>
+          <p>{loveStyle.what_they_need}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            Relationship challenge
+          </h3>
+          <p>{loveStyle.challenge}</p>
         </div>
       </section>
     </div>

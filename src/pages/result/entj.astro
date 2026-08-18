@@ -34,11 +34,31 @@ const stats = [
   { label: "Decisions", value: "Thinking" },
   { label: "Lifestyle", value: "Judging" },
 ];
+
+const loveStyle = {
+  summary: `ENTJs bring the same directness and ambition to romance that they apply to every area of life. They pursue partners deliberately, communicate expectations clearly, and invest fully in relationships they consider worth their time. An ENTJ in love is loyal, protective, and genuinely committed to building a future together.`,
+  what_they_need: `A self-sufficient, ambitious partner who can match their pace and doesn't require constant reassurance. ENTJs respect strength; they are drawn to people with their own clear direction and who challenge them intellectually.`,
+  challenge: `Subordinating the relationship to career or other ambitions. ENTJs can treat a partner's emotional needs as low-priority logistics, not realising that consistency of presence matters more than grand gestures. Developing emotional availability alongside their driven nature is real growth work.`,
+};
 ---
 
 <BaseLayout
-  title="ENTJ — The Commander Personality Type | TypeInsight"
-  description="Full profile of the ENTJ personality: strengths, blind spots, career paths, and growth areas for The Commander."
+  title="ENTJ Personality: Love, Strengths & Careers | TypeInsight"
+  description="How does the ENTJ love? Romantic style, relationship needs, career paths and growth areas for The Commander. MBTI 恋愛 ENTJ / ENTJ 恋爱."
+  faqItems={[
+    {
+      question: "How does an ENTJ act in a romantic relationship?",
+      answer: "ENTJs are direct, goal-oriented partners who pursue relationships deliberately and commit fully. They are loyal and protective, but can prioritise career over emotional presence — something they must actively manage in a long-term partnership.",
+    },
+    {
+      question: "ENTJ の恋愛スタイルは？(ENTJ love style / ENTJ 恋爱风格)",
+      answer: "ENTJ types bring ambition and directness to romance. They need a self-sufficient partner who challenges them, and they express love through building a shared future rather than through emotional language.",
+    },
+    {
+      question: "What MBTI type is most compatible with ENTJ?",
+      answer: "INTPs and INFPs are often cited as complementary matches for ENTJs — the INTP's analytical depth and the INFP's values-driven warmth both balance the ENTJ's driven, task-oriented nature. INTP is a particularly common pairing.",
+    },
+  ]}
 >
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
     <p class="mono-cap mb-4">Your Result</p>
@@ -105,6 +125,27 @@ const stats = [
             <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
                   style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
           ))}
+        </div>
+      </section>
+
+      <!-- Love & Relationships -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-2" style="letter-spacing:-0.04em;">
+          Love &amp; Relationships
+        </h2>
+        <p class="font-sans text-xs text-ink-mute mb-5" style="letter-spacing:0.02em;">
+          <span lang="ja">恋愛スタイル</span> &nbsp;/&nbsp; <span lang="zh-Hans">恋爱类型</span>
+        </p>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>{loveStyle.summary}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            What they need in a partner
+          </h3>
+          <p>{loveStyle.what_they_need}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            Relationship challenge
+          </h3>
+          <p>{loveStyle.challenge}</p>
         </div>
       </section>
     </div>

@@ -34,11 +34,31 @@ const stats = [
   { label: "Decisions", value: "Feeling" },
   { label: "Lifestyle", value: "Judging" },
 ];
+
+const loveStyle = {
+  summary: `INFJs approach love with rare intentionality and depth. They are selective — they do not give their heart easily — but when they do, the connection they offer is profound and enduring. INFJs see their partners with unusual clarity, often understanding them at a level the partner hasn't fully articulated to themselves.`,
+  what_they_need: `A partner capable of genuine depth: emotional honesty, intellectual substance, and a shared sense of meaning. INFJs cannot sustain surface-level relationships; they need a partner who is willing to grow alongside them and engage with the full weight of life.`,
+  challenge: `Closing off completely when hurt. INFJs can disengage entirely from a relationship that has breached their core values enough times — often without warning. Prevention means learning to voice hurt before it reaches that threshold, rather than absorbing it until disengagement feels like the only option.`,
+};
 ---
 
 <BaseLayout
-  title="INFJ — The Advocate Personality Type | TypeInsight"
-  description="Full profile of the INFJ personality: strengths, blind spots, career paths, and growth areas for The Advocate."
+  title="INFJ Personality: Love, Strengths & Careers | TypeInsight"
+  description="How does the INFJ love? Romantic style, relationship needs, career paths and growth areas for The Advocate. MBTI 恋愛 INFJ / INFJ 恋爱."
+  faqItems={[
+    {
+      question: "How does an INFJ act in a romantic relationship?",
+      answer: "INFJs are intentional, deeply loyal partners who offer rare emotional insight and genuine depth. They invest fully once they have chosen someone, but have high standards — and will disengage completely if core values are repeatedly violated.",
+    },
+    {
+      question: "INFJ の恋愛スタイルは？(INFJ love style / INFJ 恋爱风格)",
+      answer: "INFJ types approach love with profound intentionality. They seek a partner who can match their depth, engage with meaning and growth, and earn the trust required to access the INFJ's inner world — which, once opened, is extraordinary.",
+    },
+    {
+      question: "What MBTI type is most compatible with INFJ?",
+      answer: "ENFPs and ENTPs are often cited as strong INFJ matches — they share the Intuitive depth that enables real connection while bringing the external energy and spontaneity that complements the INFJ's introverted intensity. ENFP is a particularly common pairing.",
+    },
+  ]}
 >
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-12">
     <p class="mono-cap mb-4">Your Result</p>
@@ -105,6 +125,27 @@ const stats = [
             <span class="font-sans text-sm font-medium px-4 py-2 rounded-full text-ink-soft"
                   style="background:#ECEFE2;border:1px solid var(--ink-line);">{c}</span>
           ))}
+        </div>
+      </section>
+
+      <!-- Love & Relationships -->
+      <section>
+        <h2 class="font-sans font-extrabold text-xl text-ink mb-2" style="letter-spacing:-0.04em;">
+          Love &amp; Relationships
+        </h2>
+        <p class="font-sans text-xs text-ink-mute mb-5" style="letter-spacing:0.02em;">
+          <span lang="ja">恋愛スタイル</span> &nbsp;/&nbsp; <span lang="zh-Hans">恋爱类型</span>
+        </p>
+        <div class="font-sans text-ink-mute text-sm leading-relaxed space-y-4">
+          <p>{loveStyle.summary}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            What they need in a partner
+          </h3>
+          <p>{loveStyle.what_they_need}</p>
+          <h3 class="font-sans font-semibold text-ink text-sm" style="letter-spacing:-0.02em;">
+            Relationship challenge
+          </h3>
+          <p>{loveStyle.challenge}</p>
         </div>
       </section>
     </div>
